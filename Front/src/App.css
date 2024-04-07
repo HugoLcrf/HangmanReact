@@ -1,0 +1,260 @@
+/* variables */
+:root {
+  --main-color: #0f0f15;
+  --text-color: #8F8F8F;
+}
+
+
+/* body */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*Font*/
+
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+
+
+.schoolbell-regular {
+  font-family: "Schoolbell", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+body {
+  font-family: "Schoolbell", sans-serif;
+  color: var(--text-color);
+  background-image: url(img/FeuillePapier.jpg);
+  background-size: cover;
+  font-size: 1rem;
+  margin: 1rem;
+  height: 100vh;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none !important;
+  transition: background-color 1s ease;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* text */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  margin: 0;
+  cursor: default;
+}
+
+
+/* header */
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  font-size: calc(10px + 2vmin);
+  color: #0F056B
+}
+
+
+
+/* main */
+
+.Main {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* game-container */
+
+.restart{
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #0F056B;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: 0.3s ease-in;
+}
+
+.restart::before{
+  content: "Restart";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease-out;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.restart:hover::before{
+  content: "RESTART";
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease-out;
+  opacity: 1;
+  visibility: visible;
+}
+
+.restart svg{
+  width: 2rem;
+  height: 2rem;
+}
+
+.restart:hover svg{
+  transform: rotate(-360deg);
+  transition: 0.3s ease-out;
+}
+
+.game-container{
+  margin: auto;
+}
+
+.hangman{
+  width: 100%;
+  max-width: 300px;
+  margin: auto;
+  display: flex;
+
+}
+
+.keyboard{
+  margin: auto;
+  margin-bottom: 2rem;
+  max-width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.letter{
+  text-transform: uppercase;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 6px 12.5px;
+  margin: 3px;
+  border-radius: 5px;
+}
+
+.hiddenWord{
+  letter-spacing: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  font-size: 3rem;
+  font-weight: 600;
+  padding: 6px 12.5px;
+  margin: 3px;
+  border-radius: 5px;
+}
+
+.incorrect {
+  background-color: #8D1B1B;
+}
+
+.popupEnd{
+  position: absolute;
+  padding: 2rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(img/PopUp.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  color: #0F056B;
+}
+
+.popupEnd h2{
+  font-size: 2.3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.popupEnd button{
+  background: none;
+  border: none;
+  color: #05801D;
+  margin: 2rem;
+  border-radius: 12px;
+  padding: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid #05801D;
+  transition: 0.3s ease-in;
+}
+
+.popupEnd button:hover{
+  background-color: #ffffff2f;
+  transition: 0.3s ease-out;
+}
+
+.popupEnd p{
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+
+ .winner-bg .popupEnd p{
+  color: #79ffa6;
+}
+
+ .looser-bg .popupEnd p{
+  color: #8D1B1B;
+}
+
+/* footer */
+
+.Footer{
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 2rem 1rem;
+}
+
+/* media queries */
+
+@media (min-width: 768px) {
+  /* body */
+  body {
+    margin: 2rem;
+  }
+  .popupEnd h2{
+    font-size: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* body */
+  body {
+    margin: 3rem;
+  }
+  .popupEnd h2{
+    font-size: 6rem;
+  }
+}
